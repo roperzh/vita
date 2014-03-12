@@ -3,7 +3,7 @@ require 'forwardable'
 
 Bundler.require :default, ENV['RACK_ENV']
 
-module SAT
+module Vita
   module Application
     # require the application helpers
     require File.expand_path(File.join('app', 'helpers', 'application_helpers'))

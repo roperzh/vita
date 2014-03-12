@@ -1,4 +1,4 @@
-# SAT
+# Vita
 
 [Sinatra](https://github.com/sinatra/sinatra) Application Template.
 
@@ -21,7 +21,7 @@
 * Clone the repository:
 
 ```bash
-$ git clone git@github.com:patriciomacadden/sat.git
+$ git clone git@github.com:patriciomacadden/Vita.git
 ```
 
 * Create a git repository and change the `origin`:
@@ -34,7 +34,7 @@ $ git remote add origin <YOUR_GIT_REPOSITORY>
 * Change the application name (and commit the change):
 
 ```bash
-$ APP_NAME=AwesomeApp; for i in `find . -type f | grep -v .git`; do if [ `grep SAT $i | wc -l` != 0 ]; then sed -i '' "s/SAT/$APP_NAME/g" $i; fi; done; git commit -am "SAT => $APP_NAME"
+$ APP_NAME=AwesomeApp; for i in `find . -type f | grep -v .git`; do if [ `grep Vita $i | wc -l` != 0 ]; then sed -i '' "s/Vita/$APP_NAME/g" $i; fi; done; git commit -am "Vita => $APP_NAME"
 ```
 
 **Note**: Note the `APP_NAME` variable. You should change the application name
@@ -47,7 +47,7 @@ Let's create a controller for handling products.
 * Create `app/controlers/products_controller.rb`
 
 ```ruby
-module SAT::Application
+module Vita::Application
   class ProductsController < ApplicationController
     set prefix: '/products'
     # views will be found in app/views/products directory.
@@ -67,7 +67,7 @@ end
 * Create `app/helpers/products_helpers.rb`
 
 ```ruby
-module SAT::Application
+module Vita::Application
   module ProductsHelpers
     # helper methods
   end
@@ -85,11 +85,11 @@ $ mkdir app/views/products
 ```ruby
 require 'minitest_helper'
 
-describe SAT::Application::ProductsController do
+describe Vita::Application::ProductsController do
   include Rack::Test::Methods
 
   def app
-    SAT::Application
+    Vita::Application
   end
 
   describe 'GET /products' do
@@ -106,11 +106,11 @@ end
 ```ruby
 require 'minitest_helper'
 
-describe SAT::Application::ProductsHelpers do
+describe Vita::Application::ProductsHelpers do
   include Rack::Test::Methods
 
   def app
-    SAT::Application
+    Vita::Application
   end
 end
 ```
@@ -150,4 +150,4 @@ end
 
 ## License
 
-See the [LICENSE](https://github.com/patriciomacadden/sat/blob/master/LICENSE).
+See the [LICENSE](https://github.com/patriciomacadden/Vita/blob/master/LICENSE).

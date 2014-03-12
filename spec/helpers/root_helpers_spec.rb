@@ -1,9 +1,9 @@
 require 'minitest_helper'
 
-describe SAT::Application::RootHelpers do
+describe Vita::Application::RootHelpers do
   include Rack::Test::Methods
 
   def app
-    SAT::Application
+    Vita::Application
   end
 end

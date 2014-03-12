@@ -1,9 +1,9 @@
-module SAT::Application
+module Vita::Application
   class RootController < ApplicationController
     set prefix: '/'
     set views_prefix: '/root'
 
-    helpers SAT::Application::RootHelpers
+    helpers Vita::Application::RootHelpers
 
     get '/' do
       erb :index

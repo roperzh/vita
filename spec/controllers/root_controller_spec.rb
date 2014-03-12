@@ -1,10 +1,10 @@
 require 'minitest_helper'
 
-describe SAT::Application::RootController do
+describe Vita::Application::RootController do
   include Rack::Test::Methods
 
   def app
-    SAT::Application
+    Vita::Application
   end
 
   describe 'GET /' do

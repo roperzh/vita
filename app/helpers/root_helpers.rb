@@ -1,4 +1,4 @@
-module SAT::Application
+module Vita::Application
   module RootHelpers
   end
 end

@@ -1,4 +1,4 @@
-SAT::Application.configure do |config|
+Vita::Application.configure do |config|
   # directory structure
   config.set :root, File.expand_path('../..', __FILE__)
   config.set :views, File.join(config.root, 'app', 'views')

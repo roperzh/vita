@@ -1,9 +1,9 @@
-module SAT::Application
+module Vita::Application
   class ApplicationController < Sinatra::Base
     set builder: Rack::Builder.new
     set controllers: []
 
-    helpers SAT::Application::ApplicationHelpers
+    helpers Vita::Application::ApplicationHelpers
 
     def self.inherited(subclass)
       controllers << subclass unless controllers.include? subclass

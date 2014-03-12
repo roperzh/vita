@@ -1,4 +1,4 @@
-module SAT::Application
+module Vita::Application
   module ApplicationHelpers
   end
 end
