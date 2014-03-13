@@ -22,5 +22,6 @@ group :test do
   gem 'minitest',           require: 'minitest/autorun'
   gem 'rack-test',          require: 'rack/test'
   gem 'minitest-reporters'
+  gem 'mocha'
   gem 'capybara'
 end
