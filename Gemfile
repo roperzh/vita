@@ -15,6 +15,7 @@ gem 'linkedin'
 
 group :development, :test do
   gem 'rake'
+  gem 'dotenv'
 end
 
 group :test do
