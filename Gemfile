@@ -1,11 +1,17 @@
 source 'https://rubygems.org'
 
+# Core
 gem 'i18n'
 gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-contrib'
 gem 'sinatra-partial'
-gem 'sprockets'
 gem 'puma'
+
+# Frontend
+gem 'sprockets'
+
+# Application
+gem 'linkedin'
 
 group :development, :test do
   gem 'rake'
