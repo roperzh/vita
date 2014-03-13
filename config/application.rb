@@ -1,10 +1,14 @@
 require 'bundler'
 require 'forwardable'
+require 'dotenv'
 
 Bundler.require :default, ENV['RACK_ENV']
 
 module Vita
   module Application
+    # Initialize dotenv
+    Dotenv.load
+
     # require the application helpers
     require File.expand_path(File.join('app', 'helpers', 'application_helpers'))
     # require the application controller
