@@ -2,14 +2,25 @@ ENV['RACK_ENV'] = 'test'
 
 require File.expand_path(File.join('config', 'application'))
 
-require "minitest/reporters"
-Minitest::Reporters.use!
+if ENV["COVERAGE"]
+  require "simplecov"
+  SimpleCov.start do
+    add_filter "/spec/"
+    add_filter "/vendor/bundle"
+  end
+end
 
-require 'minitest/unit'
+require "dotenv"
+Dotenv.load ".env.test", ".env"
+
+require "minitest/autorun"
+require "rack/test"
 require 'mocha/mini_test'
 
-# Helper methods
+require "minitest/ansi"
+MiniTest::ANSI.use!
 
+# Helper methods
 def fake_response
   LinkedIn::Mash.new({
     first_name: "John",
