@@ -2,12 +2,10 @@ ENV['RACK_ENV'] = 'test'
 
 require File.expand_path(File.join('config', 'application'))
 
-if ENV["COVERAGE"]
-  require "simplecov"
-  SimpleCov.start do
-    add_filter "/spec/"
-    add_filter "/vendor/bundle"
-  end
+require "simplecov"
+SimpleCov.start do
+  add_filter "/spec/"
+  add_filter "/vendor/bundle"
 end
 
 require "dotenv"
