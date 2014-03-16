@@ -10,7 +10,6 @@ gem 'sinatra',         require: 'sinatra/base'
 gem 'sinatra-contrib', '~> 1.4.2'
 gem 'sinatra-partial', '~> 0.4.0'
 
-
 gem 'ohm',             '~> 1.3.2'
 gem 'ohm-contrib',     '~> 1.2'
 gem 'sprockets',       '~> 2.11.0'
