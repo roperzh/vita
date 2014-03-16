@@ -10,11 +10,14 @@ Vita::Application.configure do |config|
   # link header
   config.helpers Sinatra::LinkHeader
 
-  # logging
   unless Sinatra::Base.production?
-    file = File.new("#{config.root}/log/#{config.environment}.log", 'a+')
-    file.sync = true
-    config.use Rack::CommonLogger, file
+    # logging
+      file = File.new("#{config.root}/log/#{config.environment}.log", 'a+')
+      file.sync = true
+      config.use Rack::CommonLogger, file
+
+    # show exceptions
+    config.enable :show_exceptions
   end
 
   # method override
@@ -27,9 +30,6 @@ Vita::Application.configure do |config|
 
   # sessions
   config.enable :sessions
-
-  # show exceptions
-  config.enable :show_exceptions
 
   # sprockets
   config.builder.map '/assets' do
