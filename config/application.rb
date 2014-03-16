@@ -20,8 +20,8 @@ module Vita
 
     # require the application's initializers
     Dir[File.join('config', 'initializers', '**/*.rb')].each { |file| require File.expand_path(file) }
-    # require presenter objects
-    Dir[File.join('app', 'presenters', '**/*.rb')].each { |file| require File.expand_path(file) }
+    # require servide objects
+    Dir[File.join('app', 'services', '**/*.rb')].each { |file| require File.expand_path(file) }
     # require the rest of the controllers
     Dir[File.join('app', 'controllers', '**/*.rb')].each { |file| require File.expand_path(file) }
     # require the models
