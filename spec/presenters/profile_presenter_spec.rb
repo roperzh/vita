@@ -7,11 +7,18 @@ describe ProfilePresenter do
   let(:presenter)    { ProfilePresenter.new }
 
   describe 'instance methods' do
-    it '#get' do
-      LinkedIn::Client.any_instance.stubs(:profile).returns(fake_response)
 
-      presenter.get(:first_name).must_equal('John')
-      presenter.get(:last_name).must_equal('Doe')
+    before do
+      LinkedIn::Client.any_instance.stubs(:profile).returns(fake_response)
+    end
+
+    it '#get' do
+      presenter.get(:first_name).must_equal 'John'
+      presenter.get(:last_name).must_equal 'Doe'
+    end
+
+    it '#full_name' do
+      presenter.full_name.must_equal 'John Doe'
     end
   end
 

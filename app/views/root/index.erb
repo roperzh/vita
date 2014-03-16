@@ -1,1 +1,52 @@
-<h2>Holandas</h2>
+<header>
+  <img src="<%= profile.avatar %>">
+  <h1><%= profile.full_name %></h1>
+  <p><%= profile.get :headline %></p>
+</header>
+
+<h2>Experience</h2>
+<ol>
+  <% profile.positions.each do |position| %>
+    <li>
+      <h4><%= position.title %></h4>
+      <p><%= position.company %></p>
+      <p><%= position.start_date %></p>
+    </li>
+  <% end %>
+</ol>
+
+<h2>Education</h2>
+<ol>
+  <% profile.educations.each do |education| %>
+    <li>
+      <h4><%= education.school_name %></h4>
+      <p><%= education.start_date %></p>
+    </li>
+  <% end %>
+</ol>
+
+<h2>Projects</h2>
+<ol>
+  <% profile.projects.each do |project| %>
+    <li>
+      <h4><%= project.name %></h4>
+      <p><%= project.description %></p>
+    </li>
+  <% end %>
+</ol>
+
+<h2>Skills</h2>
+<ul>
+  <% profile.skills.each do |skill| %>
+    <li><%= skill.name %></li>
+  <% end %>
+</ul>
+
+<h2>Courses</h2>
+<ol>
+  <% profile.courses.each do |course| %>
+    <li>
+      <h4><%= course.name %></h4>
+    </li>
+  <% end %>
+</ol>

@@ -11,7 +11,6 @@ describe Vita::Application::RootController do
     it 'must be ok' do
       get '/'
       last_response.must_be :ok?
-      last_response.body.must_match 'Hello World'
     end
   end
 end
