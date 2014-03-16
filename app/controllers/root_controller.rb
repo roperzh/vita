@@ -11,7 +11,9 @@ module Vita::Application
 
   private
     def profile
-      @profile ||=  ProfilePresenter.new
+      ProfileParser.new(Profile.new).parse unless Profile[1]
+
+      @profile ||= Profile[1]
     end
   end
 end
