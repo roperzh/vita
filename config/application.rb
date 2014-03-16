@@ -1,6 +1,7 @@
 require 'bundler'
 require 'forwardable'
 require 'dotenv'
+require 'ohm'
 
 Bundler.require :default, ENV['RACK_ENV']
 
@@ -8,6 +9,8 @@ module Vita
   module Application
     # Initialize dotenv
     Dotenv.load
+
+    Ohm.connect
 
     # require the application controller
     require File.expand_path(File.join('app', 'controllers', 'application_controller'))

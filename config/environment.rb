@@ -11,9 +11,11 @@ Vita::Application.configure do |config|
   config.helpers Sinatra::LinkHeader
 
   # logging
-  file = File.new("#{config.root}/log/#{config.environment}.log", 'a+')
-  file.sync = true
-  config.use Rack::CommonLogger, file
+  unless Sinatra::Base.production?
+    file = File.new("#{config.root}/log/#{config.environment}.log", 'a+')
+    file.sync = true
+    config.use Rack::CommonLogger, file
+  end
 
   # method override
   config.enable :method_override
