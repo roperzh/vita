@@ -8,5 +8,8 @@
 
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
  }
+
+h1, h2, h3, h4, h5, p, span {
+  font-family: 'Open Sans', sans-serif;
+}
