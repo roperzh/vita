@@ -1,0 +1,32 @@
+/*************************************/
+/*
+/*   Layouts
+/*    -> hold one or more modules
+/*       together
+/*
+/*************************************/
+
+
+#content {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0px auto;
+}
+
+#headline {
+  position: relative;
+
+  .basic-info {
+    padding-left: 100px;
+    padding-top: 30px;
+
+  }
+
+  .picture {
+    position: absolute;
+    right: 120px;
+    top: 25px;
+    height: 150px;
+  }
+}

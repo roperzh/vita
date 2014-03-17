@@ -1,7 +1,10 @@
-<header>
-  <img src="<%= profile.get(:avatar) %>">
-  <h1><%= profile.full_name %></h1>
-  <p><%= profile.get :headline %></p>
+<header id="headline">
+  <section class="basic-info">
+    <h1 class="title"><%= profile.full_name %></h1>
+    <p class="subtitle"><%= profile.get :headline %></p>
+  </section>
+
+  <img src="<%= profile.get(:avatar) %>" class="picture">
 </header>
 
 <h2>Experience</h2>

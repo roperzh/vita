@@ -6,3 +6,11 @@
 /*
 /*************************************/
 
+.basic-info {
+  @extend .title-with-subtitle;
+
+  .subtitle {
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+}
