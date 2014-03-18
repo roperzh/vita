@@ -13,9 +13,14 @@
 .basic-info {
   @extend .title-with-subtitle;
 
+  .title {
+    margin: 0;
+  }
+
   .subtitle {
     text-transform: uppercase;
     font-size: 15px;
+    margin: 0;
   }
 }
 
@@ -102,5 +107,21 @@
     &:before {
       font-size: 7px;
     }
+  }
+}
+
+.networks {
+  @extend .clearfix;
+  list-style: none;
+  padding: 0;
+  margin: 3px 0;
+
+  li {
+    float: left;
+    padding: 5px;
+  }
+
+  i {
+    color: #B7336F;
   }
 }

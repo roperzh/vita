@@ -6,24 +6,34 @@
 /*
 /*************************************/
 
+#container {
+  width: 800px;
+  margin: 0 0 0 2em;
+  background: #fff;
+}
+
 #content {
-  width: 100%;
-  max-width: 860px;
   margin: 0px auto;
+  max-width: 750px;
 }
 
 #headline {
   position: relative;
+  height: 185px;
 
   .basic-info {
     padding-left: 100px;
-    padding-top: 30px;
+    padding-top: 90px;
   }
 
   .picture {
     position: absolute;
-    right: 120px;
-    top: 25px;
+    right: 35px;
+    top: 50px;
     height: 150px;
   }
+}
+
+#centered-container {
+  margin-left: 40px;
 }
