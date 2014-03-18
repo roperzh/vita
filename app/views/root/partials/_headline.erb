@@ -1,0 +1,14 @@
+<header id="headline">
+  <section class="basic-info">
+    <h1 class="title"><%= profile.full_name %></h1>
+    <p class="subtitle"><%= profile.get :headline %></p>
+    <ul class="networks">
+      <li><a href="#"><i class="fa fa-github"></i></a></li>
+      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fa fa-skype"></i></a></li>
+      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+    </ul>
+  </section>
+
+  <img src="<%= profile.get(:avatar) %>" class="picture">
+</header>

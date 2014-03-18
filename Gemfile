@@ -10,10 +10,10 @@ gem 'sinatra',         require: 'sinatra/base'
 gem 'sinatra-contrib', '~> 1.4.2'
 gem 'sinatra-partial', '~> 0.4.0'
 
-
 gem 'ohm',             '~> 1.3.2'
 gem 'ohm-contrib',     '~> 1.2'
 gem 'sprockets',       '~> 2.11.0'
+gem 'sass'#,            '~> 2.11.0'
 gem 'linkedin',        '~> 0.4.6'
 
 group :development do

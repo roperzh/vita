@@ -1,31 +1,11 @@
-<header>
-  <img src="<%= profile.get(:avatar) %>">
-  <h1><%= profile.full_name %></h1>
-  <p><%= profile.get :headline %></p>
-</header>
+<%= partial "partials/headline" %>
 
-<h2>Experience</h2>
-<ol>
-  <% profile.positions.each do |position| %>
-    <li>
-      <h4><%= position["title"] %></h4>
-      <p><%= position["company"] %></p>
-      <p><%= position["start_date"] %></p>
-    </li>
-  <% end %>
-</ol>
+<%= partial "partials/category", locals: { title: "Experience", icon: "briefcase" } %>
 
-<h2>Education</h2>
-<ol>
-  <% profile.educations.each do |education| %>
-    <li>
-      <h4><%= education["school_name"] %></h4>
-      <p><%= education["start_date"] %></p>
-    </li>
-  <% end %>
-</ol>
+<%= partial "partials/timeline" %>
 
-<h2>Projects</h2>
+<%= partial "partials/category", locals: { title: "Projects", icon: "gear" } %>
+
 <ol>
   <% profile.projects.each do |project| %>
     <li>
@@ -35,14 +15,23 @@
   <% end %>
 </ol>
 
-<h2>Skills</h2>
+<%= partial "partials/category", locals: { title: "Skills", icon: "flask" } %>
+
 <ul>
   <% profile.skills.each do |skill| %>
-    <li><%= skill["name"] %></li>
+    <li class="skill">
+      <p><%= skill["name"] %></p>
+      <span><i class="fa fa-circle"></i></span>
+      <span><i class="fa fa-circle"></i></span>
+      <span><i class="fa fa-circle"></i></span>
+      <span><i class="fa fa-circle"></i></span>
+      <span><i class="fa fa-circle"></i></span>
+    </li>
   <% end %>
 </ul>
 
-<h2>Courses</h2>
+<%= partial "partials/category", locals: { title: "Courses", icon: "certificate" } %>
+
 <ol>
   <% profile.courses.each do |course| %>
     <li>
@@ -50,3 +39,4 @@
     </li>
   <% end %>
 </ol>
+

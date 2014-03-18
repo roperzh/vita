@@ -1,0 +1,31 @@
+/*************************************/
+/*
+/*   Extends
+/*    -> common classes
+/*
+/*************************************/
+
+.clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.title-with-subtitle {
+  .title {
+    font-weight: bold;
+  }
+
+  .subtitle {
+    font-weight: 100;
+    color: #9398A0
+  }
+}
