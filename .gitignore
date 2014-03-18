@@ -2,3 +2,4 @@ log/*
 coverage/*
 .env
 dump.rdb
+.env.test
