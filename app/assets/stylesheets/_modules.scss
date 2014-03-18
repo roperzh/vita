@@ -15,13 +15,19 @@
 
   .title {
     margin: 0;
+    font-size: 35px;
+    letter-spacing: 1px;
   }
 
   .subtitle {
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 18px;
     margin: 0;
   }
+}
+
+.picture {
+  border-radius: 50%;
 }
 
 /********************/
@@ -61,7 +67,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    margin-left: -9px;
+    margin-left: 3px;
     background: #D5D7DA;
     left: 20%;
   }
@@ -70,9 +76,14 @@
     position: relative;
   }
 
+  h4 {
+    display: inline;
+    width: 110px;
+    display: inline-block;
+  }
+
   time {
     display: block;
-    width: 25%;
     padding-right: 100px;
     position: absolute;
   }
@@ -86,21 +97,21 @@
     h4 {
       margin-top: 0px;
       padding: 0 0 10px 0;
+      display: inline;
     }
   }
 
   .icon {
-    width: 15px;
-    height: 15px;
-    font-size: 1.4em;
-    line-height: 5px;
+    width: 12px;
+    height: 12px;
+    font-size: 9px;
     position: absolute;
-    color: #D5D7DA;
+    color: #B7336F;
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 0 0 2px #D5D7DA;
     text-align: center;
-    left: 20%;
+    left: 142px;
     top: 0;
     margin: 0 0 0 -16px;
 
