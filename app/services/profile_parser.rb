@@ -19,6 +19,7 @@ class ProfileParser
     profile.positions  = parsed_positions
     profile.projects   = parsed_projects
     profile.courses    = parsed_courses
+    profile.volunteer  = parsed_volunteer_experiences
     profile.save
   end
 
@@ -70,6 +71,15 @@ protected
 
   def parsed_courses
     data.courses ? data.courses.all : []
+  end
+
+  def parsed_volunteer_experiences
+    data.volunteer.volunteer_experiences.all.map do |experience|
+      {
+        role:         experience.role,
+        organization: experience.organization.name
+      }
+    end
   end
 
   def parse_date(ln_date)

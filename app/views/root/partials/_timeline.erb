@@ -1,0 +1,53 @@
+<div id="centered-container">
+
+  <ol class="timeline large">
+    <% profile.volunteer.each do |volunteer| %>
+      <li>
+        <h4><%= volunteer["role"] %></h4>
+        <time>
+          <span>volunteer</span>
+        </time>
+        <div class="icon fa fa-circle"></div>
+        <div class="label">
+          <h4><%= volunteer["organization"] %></h4>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+
+  <ol class="timeline large">
+    <% profile.positions.each do |position| %>
+      <li>
+        <h4><%= position["title"] %></h4>
+        <time>
+          <span><%= position["start_date"] %> - <%= position["end_date"] %></span>
+        </time>
+        <div class="icon fa fa-circle"></div>
+        <div class="label">
+          <h4><%= position["company"] %></h4>
+          <p><%= position["summary"] %></p>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+</div>
+
+<%= partial "partials/category", locals: { title: "Education", icon: "book" } %>
+
+<div id="centered-container">
+  <ol class="timeline">
+    <% profile.educations.each do |education| %>
+      <li>
+        <h4><%= education["school_name"] %></h4>
+        <time>
+          <span><%= education["start_date"] %> - <%= education["end_date"] %></span>
+        </time>
+        <div class="icon fa  fa-circle"></div>
+        <div class="label">
+          <h4><%= education["degree"] %></h4>
+          <p><%= education["notes"] %></p>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+</div>

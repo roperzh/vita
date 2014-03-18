@@ -2,45 +2,7 @@
 
 <%= partial "partials/category", locals: { title: "Experience", icon: "briefcase" } %>
 
-<div id="centered-container">
-  <ol class="timeline large">
-    <% profile.positions.each do |position| %>
-
-      <li>
-        <h4><%= position["title"] %></h4>
-        <time>
-          <span><%= position["start_date"] %> - <%= position["end_date"] %></span>
-        </time>
-        <div class="icon fa fa-circle"></div>
-        <div class="label">
-          <h4><%= position["company"] %></h4>
-          <p><%= position["summary"] %></p>
-        </div>
-      </li>
-
-    <% end %>
-  </ol>
-</div>
-
-<%= partial "partials/category", locals: { title: "Education", icon: "book" } %>
-
-<div id="centered-container">
-  <ol class="timeline">
-    <% profile.educations.each do |education| %>
-      <li>
-        <h4><%= education["school_name"] %></h4>
-        <time>
-          <span><%= education["start_date"] %> - <%= education["end_date"] %></span>
-        </time>
-        <div class="icon fa  fa-circle"></div>
-        <div class="label">
-          <h4><%= education["degree"] %></h4>
-          <p><%= education["notes"] %></p>
-        </div>
-      </li>
-    <% end %>
-  </ol>
-</div>
+<%= partial "partials/timeline" %>
 
 <%= partial "partials/category", locals: { title: "Projects", icon: "gear" } %>
 
@@ -57,7 +19,14 @@
 
 <ul>
   <% profile.skills.each do |skill| %>
-    <li><%= skill["name"] %></li>
+    <li class="skill">
+      <p><%= skill["name"] %></p>
+      <span><i class="fa fa-circle"></i></span>
+      <span><i class="fa fa-circle"></i></span>
+      <span><i class="fa fa-circle"></i></span>
+      <span><i class="fa fa-circle"></i></span>
+      <span><i class="fa fa-circle"></i></span>
+    </li>
   <% end %>
 </ul>
 

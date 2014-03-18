@@ -17,5 +17,6 @@ class Profile < Ohm::Model
   attribute :positions,  Type::Array
   attribute :projects,   Type::Array
   attribute :courses,    Type::Array
+  attribute :volunteer,  Type::Array
 
 end
