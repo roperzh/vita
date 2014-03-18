@@ -24,11 +24,11 @@ describe ProfileParser do
         profile.get(:skills).must_equal("[{\"name\":\"skill_1\"}]")
 
         profile.get(:educations).must_equal(
-          "[{\"school_name\":\"Some school around here\",\"start_date\":\"2323-09-01\",\"end_date\":\"2323-09-01\"}]"
+          "[{\"school_name\":\"Some school around here\",\"summary\":null,\"degree\":null,\"notes\":null,\"start_date\":\"2323-09-01\",\"end_date\":\"2323-09-01\"}]"
         )
 
         profile.get(:positions).must_equal(
-          "[{\"company\":\"Hash Brothers\",\"title\":\"Ingenieer\",\"start_date\":\"2323-09-01\"}]"
+          "[{\"company\":\"Hash Brothers\",\"title\":\"Ingenieer\",\"summary\":null,\"start_date\":\"2323-09-01\",\"end_date\":\"2323-09-01\"}]"
         )
 
         profile.get(:projects).must_equal(

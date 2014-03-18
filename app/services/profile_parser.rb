@@ -41,6 +41,9 @@ protected
     data.educations.all.map do |education|
       {
         school_name: education.school_name,
+        summary:     education.summary,
+        degree:      education.degree,
+        notes:       education.notes,
         start_date:  parse_date(education.start_date),
         end_date:    parse_date(education.end_date)
       }
@@ -54,7 +57,9 @@ protected
       {
         company:    position.company.name,
         title:      position.title,
-        start_date: parse_date(position.start_date)
+        summary:    position.summary,
+        start_date: parse_date(position.start_date),
+        end_date:   parse_date(position.end_date)
       }
     end
   end
@@ -68,8 +73,12 @@ protected
   end
 
   def parse_date(ln_date)
-    return "" unless ln_date.month && ln_date.year
-    Date.strptime("#{ln_date.month}-#{ln_date.year}", "%m-%Y")
+    return "today" unless ln_date
+    if ln_date.month
+      "#{ln_date.month}/#{ln_date.year}"
+    else
+      "#{ln_date.year}"
+    end
   end
 
 end

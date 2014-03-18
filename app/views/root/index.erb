@@ -1,24 +1,6 @@
-<header id="headline">
-  <section class="basic-info">
-    <h1 class="title"><%= profile.full_name %></h1>
-    <p class="subtitle"><%= profile.get :headline %></p>
-    <ul class="networks">
-      <li><a href="#"><i class="fa fa-github"></i></a></li>
-      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fa fa-skype"></i></a></li>
-      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-    </ul>
-  </section>
+<%= partial "partials/headline" %>
 
-  <img src="<%= profile.get(:avatar) %>" class="picture">
-</header>
-
-<div class="category">
-  <h2 class="title">
-    <i class="fa fa-briefcase"></i>
-    Experience
-  </h2>
-</div>
+<%= partial "partials/category", locals: { title: "Experience", icon: "briefcase" } %>
 
 <div id="centered-container">
   <ol class="timeline large">
@@ -27,12 +9,12 @@
       <li>
         <h4><%= position["title"] %></h4>
         <time>
-          <span><%= position["start_date"] %></span>
-          <span><%= position["end_date"] %></span>
+          <span><%= position["start_date"] %> - <%= position["end_date"] %></span>
         </time>
         <div class="icon fa fa-circle"></div>
         <div class="label">
-          <p><%= position["company"] %></p>
+          <h4><%= position["company"] %></h4>
+          <p><%= position["summary"] %></p>
         </div>
       </li>
 
@@ -40,32 +22,28 @@
   </ol>
 </div>
 
-<div class="category">
-  <h2 class="title">
-  <i class="fa fa-book"></i>
-    Education
-  </h2>
-</div>
+<%= partial "partials/category", locals: { title: "Education", icon: "book" } %>
+
 <div id="centered-container">
   <ol class="timeline">
     <% profile.educations.each do |education| %>
       <li>
+        <h4><%= education["school_name"] %></h4>
+        <time>
+          <span><%= education["start_date"] %> - <%= education["end_date"] %></span>
+        </time>
         <div class="icon fa  fa-circle"></div>
         <div class="label">
-          <h4><%= education["school_name"] %></h4>
-          <p><%= education["start_date"] %></p>
+          <h4><%= education["degree"] %></h4>
+          <p><%= education["notes"] %></p>
         </div>
       </li>
     <% end %>
   </ol>
 </div>
 
-<div class="category">
-  <h2 class="title">
-    <i class="fa fa-gear"></i>
-    Projects
-  </h2>
-</div>
+<%= partial "partials/category", locals: { title: "Projects", icon: "gear" } %>
+
 <ol>
   <% profile.projects.each do |project| %>
     <li>
@@ -75,24 +53,16 @@
   <% end %>
 </ol>
 
-<div class="category">
-  <h2 class="title">
-    <i class="fa fa-flask"></i>
-    Skills
-  </h2>
-</div>
+<%= partial "partials/category", locals: { title: "Skills", icon: "flask" } %>
+
 <ul>
   <% profile.skills.each do |skill| %>
     <li><%= skill["name"] %></li>
   <% end %>
 </ul>
 
-<div class="category">
-  <h2 class="title">
-    <i class="fa fa-certificate"></i>
-    Courses
-  </h2>
-</div>
+<%= partial "partials/category", locals: { title: "Courses", icon: "certificate" } %>
+
 <ol>
   <% profile.courses.each do |course| %>
     <li>

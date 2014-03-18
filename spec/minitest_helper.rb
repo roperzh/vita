@@ -30,10 +30,12 @@ end
 # Helper methods
 def fake_response
   LinkedIn::Mash.new({
-    "first_name"  => "John",
-    "last_name"   => "Doe",
-    "headline"    => "Full stack developer",
-    "picture-url" => "http://example.com",
+    "first_name"   => "John",
+    "last_name"    => "Doe",
+    "headline"     => "Full stack developer",
+    "picture-urls" => LinkedIn::Mash.new({
+      "all" => ["http://example.com"]
+    }),
     "skills"      => LinkedIn::Mash.new({
       "all" => [LinkedIn::Mash.new({
         "id"    => "232",

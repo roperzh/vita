@@ -2,14 +2,19 @@ require 'bundler'
 require 'forwardable'
 require 'dotenv'
 require 'ohm'
-
-Bundler.require :default, ENV['RACK_ENV']
+require 'sinatra/partial'
 
 module Vita
   module Application
-    # Initialize dotenv
-    Dotenv.load
 
+    rack_env = ENV.fetch("RACK_ENV", "development").to_sym
+
+    Bundler.require :default, rack_env
+
+    # initialize dotenv
+    Dotenv.load ".env.#{rack_env}", ".env"
+
+    # connect to the redis database
     Ohm.connect
 
     # require the application controller
