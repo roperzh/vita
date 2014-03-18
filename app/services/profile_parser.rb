@@ -6,13 +6,13 @@ class ProfileParser
     @profile = profile
     @data    = client.profile(fields:
       %w(languages skills certifications educations courses volunteer first_name
-         last_name headline location summary positions picture-url publications
-         projects))
+         last_name headline location summary positions picture-urls::(original)
+         publications projects))
   end
 
   def parse
     profile.full_name  = "#{data.first_name} #{data.last_name}"
-    profile.avatar     = data['picture-url']
+    profile.avatar     = data["picture-urls"].all.first
     profile.headline   = data.headline
     profile.skills     = parsed_skills
     profile.educations = parsed_educations
