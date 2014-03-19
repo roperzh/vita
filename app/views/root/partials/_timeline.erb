@@ -1,6 +1,6 @@
 <div id="centered-container">
 
-  <ol class="timeline large">
+  <ol class="timeline timeline-large">
     <% profile.volunteer.each do |volunteer| %>
       <li>
         <h4><%= volunteer["role"] %></h4>
@@ -15,7 +15,7 @@
     <% end %>
   </ol>
 
-  <ol class="timeline large">
+  <ol class="timeline timeline-large">
     <% profile.positions.each do |position| %>
       <li>
         <h4><%= position["title"] %></h4>
@@ -32,7 +32,7 @@
   </ol>
 </div>
 
-<%= partial "partials/category", locals: { title: "Education", icon: "book" } %>
+<%= partial "partials/category", locals: { title: "Education", icon: "book", center: false } %>
 
 <div id="centered-container">
   <ol class="timeline">
