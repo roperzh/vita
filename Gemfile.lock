@@ -95,7 +95,7 @@ DEPENDENCIES
   puma (~> 2.8.1)
   rack-test
   rake
-  sass
+  sass (~> 3.3.3)
   shotgun (~> 0.9)
   simplecov (~> 0.8.2)
   sinatra
