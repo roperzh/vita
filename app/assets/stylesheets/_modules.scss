@@ -15,7 +15,7 @@
 
   .title {
     margin: 0;
-    font-size: 35px;
+    font-size: 45px;
     letter-spacing: 1px;
   }
 
@@ -64,12 +64,12 @@
   &:before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 30px;
     bottom: 0;
     width: 2px;
     margin-left: 3px;
     background: #D5D7DA;
-    left: 20%;
+    left: 25%;
   }
 
   li {
@@ -78,8 +78,10 @@
 
   h4 {
     display: inline;
-    width: 110px;
+    width: 150px;
     display: inline-block;
+    font-size: 20px;
+    margin: 10px 0;
   }
 
   time {
@@ -89,7 +91,8 @@
   }
 
   .label {
-    margin: 0 0 15px 25%;
+    top: -55px;
+    margin: 0 0 15px 30%;
     padding: 1em;
     font-size: 1.2em;
     position: relative;
@@ -111,8 +114,8 @@
     border-radius: 50%;
     box-shadow: 0 0 0 2px #D5D7DA;
     text-align: center;
-    left: 142px;
-    top: 0;
+    left: 189px;
+    top: 30px;
     margin: 0 0 0 -16px;
 
     &:before {
