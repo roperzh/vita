@@ -22,6 +22,15 @@ task :cleanup do
   Ohm.flush
 end
 
+desc 'Seed the database'
+task :seed do
+  ENV['RACK_ENV'] ||= 'development'
+  require_relative 'config/application'
+
+  sh "rake cleanup"
+  ProfileParser.new(Profile.new).parse
+end
+
 
 desc 'Run tests'
 task default: :test
