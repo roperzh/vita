@@ -11,15 +11,16 @@ class ProfileParser
   end
 
   def parse
-    profile.full_name  = "#{data.first_name} #{data.last_name}"
-    profile.avatar     = data["picture-urls"].all.first
-    profile.headline   = data.headline
-    profile.skills     = parsed_skills
-    profile.educations = parsed_educations
-    profile.positions  = parsed_positions
-    profile.projects   = parsed_projects
-    profile.courses    = parsed_courses
-    profile.volunteer  = parsed_volunteer_experiences
+    profile.full_name      = "#{data.first_name} #{data.last_name}"
+    profile.avatar         = data["picture-urls"].all.first
+    profile.headline       = data.headline
+    profile.skills         = parsed_skills
+    profile.educations     = parsed_educations
+    profile.positions      = parsed_positions
+    profile.projects       = parsed_projects
+    profile.courses        = parsed_courses
+    profile.certifications = parsed_certifications
+    profile.volunteer      = parsed_volunteer_experiences
     profile.save
   end
 
@@ -71,6 +72,10 @@ protected
 
   def parsed_courses
     data.courses ? data.courses.all : []
+  end
+
+  def parsed_certifications
+    data.certifications ? data.certifications.all : []
   end
 
   def parsed_volunteer_experiences

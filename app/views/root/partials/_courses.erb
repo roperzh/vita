@@ -1,7 +1,17 @@
-<ol>
+<%= partial "partials/category", locals: { title: "Courses & Certifications", icon: "certificate", center: true } %>
+
+<ul>
   <% profile.courses.each do |course| %>
     <li>
       <h4><%= course["name"] %></h4>
     </li>
   <% end %>
-</ol>
+  <% profile.certifications.each do |certification| %>
+    <li>
+      <h4><%= certification["name"] %></h4>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+</ul>
