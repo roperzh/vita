@@ -1,0 +1,9 @@
+<div class="skills">
+  <ul>
+    <% profile.skills.each do |skill| %>
+      <li class="skill">
+        <strong class="tag-<%= Random.rand(5) %>"><%= skill["name"] %></strong>
+      </li>
+    <% end %>
+  </ul>
+</div>

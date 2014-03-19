@@ -15,5 +15,22 @@ task :console do
   IRB.start
 end
 
+desc 'Clean the database'
+task :cleanup do
+  ENV['RACK_ENV'] ||= 'development'
+  require 'ohm'
+  Ohm.flush
+end
+
+desc 'Seed the database'
+task :seed do
+  ENV['RACK_ENV'] ||= 'development'
+  require_relative 'config/application'
+
+  sh "rake cleanup"
+  ProfileParser.new(Profile.new).parse
+end
+
+
 desc 'Run tests'
 task default: :test

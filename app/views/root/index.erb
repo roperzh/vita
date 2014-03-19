@@ -1,42 +1,17 @@
 <%= partial "partials/headline" %>
 
-<%= partial "partials/category", locals: { title: "Experience", icon: "briefcase" } %>
+<%= partial "partials/category", locals: { title: "Experience", icon: "briefcase", center: false } %>
 
 <%= partial "partials/timeline" %>
 
-<%= partial "partials/category", locals: { title: "Projects", icon: "gear" } %>
+<%= partial "partials/category", locals: { title: "Personal Projects", icon: "gear", center: true } %>
 
-<ol>
-  <% profile.projects.each do |project| %>
-    <li>
-      <h4><%= project["name"] %></h4>
-      <p><%= project["description"] %></p>
-    </li>
-  <% end %>
-</ol>
+<%= partial "partials/projects" %>
 
-<%= partial "partials/category", locals: { title: "Skills", icon: "flask" } %>
+<%= partial "partials/category", locals: { title: "Skills", icon: "flask", center: true } %>
 
-<ul>
-  <% profile.skills.each do |skill| %>
-    <li class="skill">
-      <p><%= skill["name"] %></p>
-      <span><i class="fa fa-circle"></i></span>
-      <span><i class="fa fa-circle"></i></span>
-      <span><i class="fa fa-circle"></i></span>
-      <span><i class="fa fa-circle"></i></span>
-      <span><i class="fa fa-circle"></i></span>
-    </li>
-  <% end %>
-</ul>
+<%= partial "partials/skills" %>
 
-<%= partial "partials/category", locals: { title: "Courses", icon: "certificate" } %>
+<%= partial "partials/category", locals: { title: "Courses", icon: "certificate", center: true } %>
 
-<ol>
-  <% profile.courses.each do |course| %>
-    <li>
-      <h4><%= course["name"] %></h4>
-    </li>
-  <% end %>
-</ol>
-
+<%= partial "partials/courses" %>
