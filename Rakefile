@@ -15,5 +15,13 @@ task :console do
   IRB.start
 end
 
+desc 'Clean the database'
+task :cleanup do
+  ENV['RACK_ENV'] ||= 'development'
+  require 'ohm'
+  Ohm.flush
+end
+
+
 desc 'Run tests'
 task default: :test
