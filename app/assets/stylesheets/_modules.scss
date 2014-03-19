@@ -136,3 +136,54 @@
     color: #B7336F;
   }
 }
+
+/********************/
+/* Projects
+/********************/
+
+.projects {
+
+  .item {
+    list-style: none;
+  }
+
+  .title {
+    font-size: 18px;
+    text-decoration: none;
+    color: #B7336F;
+  }
+}
+
+/********************/
+/* Skills
+/********************/
+
+.skills {
+  @extend .clearfix;
+
+  .skill {
+    float: left;
+    list-style: none;
+    padding: 15px;
+  }
+
+  .tag-1 {
+    font-size: 20px;
+  }
+
+  .tag-2 {
+    font-size: 22px;
+  }
+
+  .tag-3 {
+    font-size: 24px;
+  }
+
+  .tag-4 {
+    font-size: 26px;
+  }
+
+  .tag-5 {
+    font-size: 28px;
+  }
+}
