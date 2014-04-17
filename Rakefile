@@ -31,6 +31,12 @@ task :seed do
   ProfileParser.new(Profile.new).parse
 end
 
+desc 'Refresh the dataset'
+task :refresh do
+  %w(cleanup seed).each do |task|
+    Rake::Task[task].invoke
+  end
+end
 
 desc 'Run tests'
 task default: :test
