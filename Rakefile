@@ -1,3 +1,7 @@
+require "bundler"
+rack_env = ENV.fetch("RACK_ENV", "development").to_sym
+Bundler.setup(:default, rack_env)
+
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
