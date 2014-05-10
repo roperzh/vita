@@ -1,5 +1,12 @@
-log/*
-coverage/*
-.env
+# Application
+log/
+coverage/
 dump.rdb
+Procfile.dev
+
+# Environment files
+.env
 .env.test
+
+# Gem managment
+.ruby-gemset
