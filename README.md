@@ -1,6 +1,6 @@
 # Vita
 
-Little sinatra application, who consumes the Linkedin API, and shows the information formatted as a curriculum vitae.
+Little [Sinatra](http://www.sinatrarb.com/) application, which consumes the Linkedin API, and shows the information formatted as a curriculum vitae.
 
 Vita uses [HAT](https://github.com/patriciomacadden/hat) as a base.
 
