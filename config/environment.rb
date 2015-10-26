@@ -12,9 +12,9 @@ Vita::Application.configure do |config|
 
   unless Sinatra::Base.production?
     # logging
-      file = File.new("#{config.root}/log/#{config.environment}.log", 'a+')
-      file.sync = true
-      config.use Rack::CommonLogger, file
+    file = File.new("#{config.root}/log/#{config.environment}.log", 'a+')
+    file.sync = true
+    config.use Rack::CommonLogger, file
 
     # show exceptions
     config.enable :show_exceptions
@@ -33,10 +33,11 @@ Vita::Application.configure do |config|
 
   # sprockets
   config.builder.map '/assets' do
-    environment = Sprockets::Environment.new
-    environment.append_path File.join(config.root, 'app', 'assets', 'javascripts')
-    environment.append_path File.join(config.root, 'app', 'assets', 'stylesheets')
-    run environment
+    env = Sprockets::Environment.new
+    env.append_path File.join(config.root, 'app', 'assets', 'javascripts')
+    env.append_path File.join(config.root, 'app', 'assets', 'stylesheets')
+
+    run env
   end
 
   # template engine

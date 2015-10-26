@@ -1,3 +1,3 @@
-Vita::Application.configure :test do |config|
+Vita::Application.configure :test do
   Capybara.app = Vita
 end

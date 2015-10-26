@@ -1,2 +1,2 @@
-Vita::Application.configure :production do |config|
+Vita::Application.configure :production do
 end

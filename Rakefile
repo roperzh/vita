@@ -1,5 +1,5 @@
-require "bundler"
-rack_env = ENV.fetch("RACK_ENV", "development").to_sym
+require 'bundler'
+rack_env = ENV.fetch('RACK_ENV', 'development').to_sym
 Bundler.setup(:default, rack_env)
 
 require 'rake/testtask'
@@ -31,7 +31,7 @@ task :seed do
   ENV['RACK_ENV'] ||= 'development'
   require_relative 'config/application'
 
-  sh "rake cleanup"
+  sh 'rake cleanup'
   ProfileParser.new(Profile.new).parse
 end
 
